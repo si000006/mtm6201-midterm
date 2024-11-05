@@ -1,18 +1,31 @@
-
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
+/* Typography */
 body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    font-family: 'Karla', sans-serif;
 }
 
+/* Headings and Navigation */
+h1, h2, h3, nav a {
+    font-family: 'Lato', sans-serif;
+}
 
+/* Wrapper */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -35,20 +48,37 @@ nav ul {
 nav a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+nav a:hover,
+nav a:focus {
+    color: #ffc107;
+}
 
+/* Hero Section */
 .hero-section {
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
     text-align: center;
     color: #fff;
+    animation: fadeIn 2s ease-in;
 }
 
 .hero-section .hero-content {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .hero-section .button {
@@ -57,14 +87,30 @@ nav a {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
-    display: inline-block;
+    font-family: 'Karla', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.hero-section .button:hover,
+.hero-section .button:focus {
+    background-color: #e0a800;
+    color: #fff;
+}
 
+/* Welcome Section */
 .welcome-section {
     padding: 50px 20px;
     text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .welcome-section .image-gallery {
@@ -72,7 +118,6 @@ nav a {
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .welcome-section .image-gallery img {
@@ -80,11 +125,21 @@ nav a {
     border-radius: 10px;
 }
 
-
+/* Why Visit Section */
 .why-visit-section {
     background-color: #fff;
     padding: 50px 20px;
     text-align: center;
+}
+
+.why-visit-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.why-visit-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .why-visit-section .features {
@@ -92,7 +147,6 @@ nav a {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .why-visit-section .feature {
@@ -105,38 +159,125 @@ nav a {
     margin-bottom: 10px;
 }
 
+.why-visit-section .feature h3 {
+    margin-bottom: 10px;
+}
 
-.menu-section {
-    padding: 50px 20px;
-    background-color: #f1f1f1;
+.why-visit-section .feature p {
+    font-size: 1rem;
+}
+
+/* Menu Section */
+/* General styles */
+.menu-section .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    text-align: center;
+}
+
+.menu-section img {
+    width: 100%;
+    height: auto;
 }
 
 .menu-content, .locations-content {
-    text-align: center;
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.menu-section .button {
-    background-color: #ffc107;
-    color: #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+.menu-content h2, .locations-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.menu-content p, .locations-content p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.menu-content .button {
     display: inline-block;
-    margin-top: 10px;
+    padding: 10px 20px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
 }
 
+.menu-content .button:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
 
+/* Desktop view (min-width 1100px) */
+@media (min-width: 1100px) {
+    .menu-section .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .menu-content, .locations-content {
+        position: relative;
+        width: 50%;
+    }
+    
+    .menu-content {
+        padding-right: 20px;
+    }
+    
+    .locations-content {
+        padding-left: 20px;
+    }
+}
+
+/* Tablet view (min-width 768px and max-width 1099px) */
+@media (min-width: 768px) and (max-width: 1099px) {
+    .menu-section .wrapper {
+        flex-direction: column;
+    }
+    
+    .menu-content, .locations-content {
+        position: relative;
+        width: 100%;
+    }
+    
+    .menu-content {
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile view (max-width 767px) */
+@media (max-width: 767px) {
+    .menu-content, .locations-content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-content, .locations-content h2 {
+        font-size: 1.2em;
+    }
+    
+    .menu-content p, .locations-content p {
+        font-size: 1em;
+    }
+}
+
+/* About Section */
 .about-section {
     background-color: #fff;
     padding: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+}
+
+.about-section .wrapper {
+    max-width: 800px;
 }
 
 .about-section img {
@@ -145,17 +286,50 @@ nav a {
     border-radius: 10px;
 }
 
+.about-section p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
 
+.about-section .button {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Karla', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-section .button:hover,
+.about-section .button:focus {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+/* Testimonials Section */
 .testimonials-section {
     background-color: #000;
     color: #fff;
     padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials-section .wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
 .testimonials-section .testimonial {
     max-width: 300px;
-    margin: 20px auto;
-    text-align: center;
+    margin: 20px;
 }
 
 .testimonials-section img {
@@ -164,7 +338,17 @@ nav a {
     margin-bottom: 10px;
 }
 
+.testimonials-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
 
+.testimonials-section cite {
+    font-style: normal;
+    color: #ffc107;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -172,42 +356,123 @@ footer {
     padding: 10px;
 }
 
+/* Keyframes for Hero Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-@media (max-width: 768px) {
+/* Responsive Styles */
+
+/* For screens 768px and above */
+@media (min-width: 768px) {
+    /* Header */
     header {
-        flex-direction: column;
-        text-align: center;
+        padding: 20px 40px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
+    /* Hero Section */
     .hero-section {
-        padding: 80px 20px;
+        padding: 120px 20px;
     }
 
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    /* Welcome Section */
+    .welcome-section .image-gallery img {
+        max-width: 180px;
+    }
+
+    /* Why Visit Section */
     .why-visit-section .features {
-        flex-direction: column;
-        gap: 20px;
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
 
-    .menu-section, .about-section {
-        padding: 30px 20px;
+    /* Menu Section */
+    .menu-section .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section .wrapper {
+        justify-content: space-around;
     }
 }
 
-@media (max-width: 480px) {
+/* For screens 1100px and above */
+@media (min-width: 1100px) {
+    /* Header */
+    header {
+        padding: 30px 60px;
+    }
+
+    /* Hero Section */
     .hero-section {
-        padding: 60px 20px;
+        padding: 140px 20px;
     }
 
-    .welcome-section .image-gallery img {
-        max-width: 100px;
+    .hero-section h1 {
+        font-size: 4rem;
     }
 
-    .testimonials-section .testimonial {
-        max-width: 100%;
+    .hero-section p {
+        font-size: 1.5rem;
     }
+
+    /* Why Visit Section */
+    .why-visit-section .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    /* Menu Section */
+    .menu-section .wrapper {
+        gap: 60px;
+    }
+
+    /* About Section */
+    .about-section .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .about-section img {
+        max-width: 50%;
+    }
+
+    .about-section .about-content {
+        max-width: 50%;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Button Hover and Focus States */
+.button:hover,
+.button:focus {
+    background-color: #e0a800;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Smooth Transition for Buttons */
+.button {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
