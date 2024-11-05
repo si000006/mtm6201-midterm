@@ -1,0 +1,213 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-section .button {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+
+.welcome-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.welcome-section .image-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.welcome-section .image-gallery img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+
+.why-visit-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-visit-section .features {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.why-visit-section .feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+.why-visit-section .feature img {
+    max-height: 50px;
+    margin-bottom: 10px;
+}
+
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-content, .locations-content {
+    text-align: center;
+}
+
+.menu-section .button {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+.about-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-section img {
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+
+.testimonials-section {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.testimonials-section .testimonial {
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.testimonials-section img {
+    max-width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+    }
+
+    .why-visit-section .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-section, .about-section {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .welcome-section .image-gallery img {
+        max-width: 100px;
+    }
+
+    .testimonials-section .testimonial {
+        max-width: 100%;
+    }
+}
